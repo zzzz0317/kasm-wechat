@@ -16,7 +16,11 @@ echo "Download finished, size: $(du -h "$DOWNLOAD_PATH" | cut -f1)"
 
 dpkg -i $DOWNLOAD_PATH || {
     echo "install error"
+    exit 1
 }
 
-rm $DOWNLOAD_PATH
+rm $DOWNLOAD_PATH || {
+    echo "remove tmp file error"
+    exit 1
+}
 echo "done"
