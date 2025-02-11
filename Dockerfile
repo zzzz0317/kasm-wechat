@@ -3,9 +3,9 @@ FROM ghcr.io/zzzz0317/kasm-core-ubuntu-noble-latest:main
 USER root
 
 RUN apt-get update \
-    && apt-get upgrade \
+    && apt-get upgrade -y \
     && apt-get install -y sudo xfce4-terminal xdg-utils \
-    && apt install -y libxcb-icccm4 libxcb-image0 libxcb-render-util0 libxcb-keysyms1 \
+    && apt-get install -y libxcb-icccm4 libxcb-image0 libxcb-render-util0 libxcb-keysyms1 \
     && rm -rf /var/lib/apt/list/*
 RUN echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
