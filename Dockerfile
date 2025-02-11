@@ -4,7 +4,7 @@ USER root
 
 RUN apt-get update \
     && apt-get upgrade \
-    && apt-get install -y sudo xfce4-terminal \
+    && apt-get install -y sudo xfce4-terminal xdg-utils \
     && apt install -y libxcb-icccm4 libxcb-image0 libxcb-render-util0 libxcb-keysyms1 \
     && rm -rf /var/lib/apt/list/*
 RUN echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
